@@ -3,3 +3,6 @@
 ################################################################################
 
 /TimeSheetApp/.vs/TimeSheetApp/v16
+/TimeSheetApp/TimeSheetApp/bin/Debug
+/TimeSheetApp/TimeSheetApp/obj/Debug
+/TimeSheetApp/packages/Dapper.2.0.35
