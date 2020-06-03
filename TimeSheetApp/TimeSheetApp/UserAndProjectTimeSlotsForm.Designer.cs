@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.yearPicker = new System.Windows.Forms.DateTimePicker();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.monthComboBox = new System.Windows.Forms.ComboBox();
-            this.lblMonth = new System.Windows.Forms.Label();
-            this.lblYear = new System.Windows.Forms.Label();
             this.GridViewUsers = new System.Windows.Forms.DataGridView();
             this.groupBoxUsersTimeSheet = new System.Windows.Forms.GroupBox();
             this.groupBoxProjectTimeSheet = new System.Windows.Forms.GroupBox();
             this.GridViewProjects = new System.Windows.Forms.DataGridView();
+            this.yearPicker = new System.Windows.Forms.DateTimePicker();
+            this.lblYear = new System.Windows.Forms.Label();
             this.groupBoxSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewUsers)).BeginInit();
             this.groupBoxUsersTimeSheet.SuspendLayout();
@@ -56,14 +56,6 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Search For Hours For Users and Projects By Date";
             // 
-            // yearPicker
-            // 
-            this.yearPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearPicker.Location = new System.Drawing.Point(168, 49);
-            this.yearPicker.Name = "yearPicker";
-            this.yearPicker.Size = new System.Drawing.Size(108, 24);
-            this.yearPicker.TabIndex = 1;
-            // 
             // groupBoxSearch
             // 
             this.groupBoxSearch.Controls.Add(this.lblYear);
@@ -78,6 +70,15 @@
             this.groupBoxSearch.TabIndex = 2;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Search Panel";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(6, 28);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(49, 16);
+            this.lblMonth.TabIndex = 4;
+            this.lblMonth.Text = "Month";
             // 
             // btnSearch
             // 
@@ -99,24 +100,6 @@
             this.monthComboBox.Name = "monthComboBox";
             this.monthComboBox.Size = new System.Drawing.Size(144, 26);
             this.monthComboBox.TabIndex = 2;
-            // 
-            // lblMonth
-            // 
-            this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(6, 28);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(49, 16);
-            this.lblMonth.TabIndex = 4;
-            this.lblMonth.Text = "Month";
-            // 
-            // lblYear
-            // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(168, 28);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(41, 16);
-            this.lblYear.TabIndex = 5;
-            this.lblYear.Text = "Year";
             // 
             // GridViewUsers
             // 
@@ -164,6 +147,23 @@
             this.GridViewProjects.Size = new System.Drawing.Size(397, 266);
             this.GridViewProjects.TabIndex = 3;
             // 
+            // yearPicker
+            // 
+            this.yearPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearPicker.Location = new System.Drawing.Point(168, 49);
+            this.yearPicker.Name = "yearPicker";
+            this.yearPicker.Size = new System.Drawing.Size(108, 24);
+            this.yearPicker.TabIndex = 1;
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(168, 28);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(41, 16);
+            this.lblYear.TabIndex = 5;
+            this.lblYear.Text = "Year";
+            // 
             // UserAndProjectTimeSlotsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,15 +192,15 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DateTimePicker yearPicker;
         private System.Windows.Forms.GroupBox groupBoxSearch;
         private System.Windows.Forms.ComboBox monthComboBox;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.DataGridView GridViewUsers;
         private System.Windows.Forms.GroupBox groupBoxUsersTimeSheet;
         private System.Windows.Forms.GroupBox groupBoxProjectTimeSheet;
         private System.Windows.Forms.DataGridView GridViewProjects;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.DateTimePicker yearPicker;
     }
 }

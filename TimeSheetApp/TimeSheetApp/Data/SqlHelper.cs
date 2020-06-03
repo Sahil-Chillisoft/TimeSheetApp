@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace TimeSheetApp.Data
 {
     public class SqlHelper
     {
-        public static string ConnectionString = "Server=SAHIL;Database=Timesheets;Trusted_Connection=True;MultipleActiveResultSets=true";
+        public static string ConnectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
 
         public static List<UserTimeSlot> GetUsersTimeByMonthAndYear(string month, string year)
         {
@@ -31,7 +32,6 @@ namespace TimeSheetApp.Data
                 sql,
                 new { Month = month, Year = year }
             ).ToList();
-
             return userTimeSlotList;
         }
 
@@ -53,6 +53,53 @@ namespace TimeSheetApp.Data
             (
                 sql,
                 new { Month = month, Year = year }
+            ).ToList();
+
+            return userTimeSlotList;
+        }
+
+        public static List<User> GetUsers(string search)
+        {
+            #region Sql
+            var sql = "select * from Users ";
+            sql += "where Username like @Search";
+            #endregion
+
+            using var connection = new SqlConnection(ConnectionString);
+            var userList = connection.Query<User>
+            (
+                sql,
+                new { Search = $"%{search}%" }
+            ).ToList();
+
+            return userList;
+        }
+
+        public static List<TimeSlotUserProject> GetTimeSlotsByUsernameAndMonth(string username, string month)
+        {
+            #region Sql
+            var sql = "select ts.UserId, FirstMatchingUser.Username, ts.TimeslotId, ";
+            sql += "ts.ProjectId, p.Name as ProjectName, ts.HoursCaptured, ts.Date ";
+            sql += "from Timeslots ts ";
+            sql += "inner join ";
+            sql += "( ";
+            sql += "select top 1 UserId, Username ";
+            sql += "from Users ";
+            sql += "where Username like @Username ";
+            sql += ") as FirstMatchingUser on ts.UserId = FirstMatchingUser.UserId ";
+            sql += "inner join Projects p on ts.ProjectId = p.ProjectId ";
+            sql += "where DATENAME(MONTH, ts.Date) = @Month ";
+            #endregion
+
+            using var connection = new SqlConnection(ConnectionString);
+            var userTimeSlotList = connection.Query<TimeSlotUserProject>
+            (
+                sql,
+                new
+                {
+                    Username = $"{username}%",
+                    Month = month
+                }
             ).ToList();
 
             return userTimeSlotList;

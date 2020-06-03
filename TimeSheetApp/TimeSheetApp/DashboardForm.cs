@@ -26,12 +26,16 @@ namespace TimeSheetApp
 
         private void btnSearchForUsers_Click(object sender, EventArgs e)
         {
-
+            var usersForm = new UsersForm();
+            usersForm.Show();
+            this.Hide();
         }
 
         private void btnViewTimeSlotsByUserAndMonth_Click(object sender, EventArgs e)
         {
-
+            var userTimeSlotsForm = new UserTimeSlotsForm();
+            userTimeSlotsForm.Show();
+            this.Hide();
         }
 
         private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
