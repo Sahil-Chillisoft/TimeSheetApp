@@ -22,8 +22,6 @@ namespace TimeSheetApp
         {
             SetCustomDateTimePickerFormat();
             monthComboBox.DataSource = DateManager.LoadMonthData();
-            groupBoxUsersTimeSheet.Visible = false;
-            groupBoxProjectTimeSheet.Visible = false;
         }
 
         private void SetCustomDateTimePickerFormat()
@@ -46,10 +44,21 @@ namespace TimeSheetApp
             groupBoxProjectTimeSheet.Visible = true;
         }
 
+        private void dashboardToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var dashboardForm = new DashboardForm();
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UserAndProjectTimeSlotsForm_FormClosing(sender, null);
+        }
+
         private void UserAndProjectTimeSlotsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
         }
-
     }
 }

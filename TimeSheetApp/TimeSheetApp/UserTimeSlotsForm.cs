@@ -28,7 +28,7 @@ namespace TimeSheetApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsername.Text))
-                MessageBox.Show(@"Please enter a username.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter a username.", @"Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 BindGrid();
         }
@@ -37,6 +37,18 @@ namespace TimeSheetApp
         {
             GridViewUserTimeSlots.DataSource = SqlHelper.GetTimeSlotsByUsernameAndMonth(txtUsername.Text, monthComboBox.Text);
             groupBoxUserTimeSlots.Visible = true;
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dashboardForm = new DashboardForm();
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserTimeSlotsForm_FormClosing(sender, null);
         }
 
         private void UserTimeSlotsForm_FormClosing(object sender, FormClosingEventArgs e)

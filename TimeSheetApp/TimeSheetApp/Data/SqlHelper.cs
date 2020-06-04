@@ -26,6 +26,7 @@ namespace TimeSheetApp.Data
             sql += "group by u.UserId, u.Username ";
             #endregion
 
+            #region SQLExecution
             using var connection = new SqlConnection(ConnectionString);
             var userTimeSlotList = connection.Query<UserTimeSlot>
             (
@@ -33,6 +34,7 @@ namespace TimeSheetApp.Data
                 new { Month = month, Year = year }
             ).ToList();
             return userTimeSlotList;
+            #endregion
         }
 
 
@@ -48,6 +50,7 @@ namespace TimeSheetApp.Data
             sql += "group by p.ProjectId, p.Name ";
             #endregion
 
+            #region SQLExecution
             using var connection = new SqlConnection(ConnectionString);
             var userTimeSlotList = connection.Query<ProjectTimeSlot>
             (
@@ -56,6 +59,7 @@ namespace TimeSheetApp.Data
             ).ToList();
 
             return userTimeSlotList;
+            #endregion
         }
 
         public static List<User> GetUsers(string search)
@@ -65,6 +69,7 @@ namespace TimeSheetApp.Data
             sql += "where Username like @Search";
             #endregion
 
+            #region SQLExecution
             using var connection = new SqlConnection(ConnectionString);
             var userList = connection.Query<User>
             (
@@ -73,6 +78,7 @@ namespace TimeSheetApp.Data
             ).ToList();
 
             return userList;
+            #endregion
         }
 
         public static List<TimeSlotUserProject> GetTimeSlotsByUsernameAndMonth(string username, string month)
@@ -91,6 +97,7 @@ namespace TimeSheetApp.Data
             sql += "where DATENAME(MONTH, ts.Date) = @Month ";
             #endregion
 
+            #region SQLExecution
             using var connection = new SqlConnection(ConnectionString);
             var userTimeSlotList = connection.Query<TimeSlotUserProject>
             (
@@ -103,6 +110,7 @@ namespace TimeSheetApp.Data
             ).ToList();
 
             return userTimeSlotList;
+            #endregion
         }
     }
 }

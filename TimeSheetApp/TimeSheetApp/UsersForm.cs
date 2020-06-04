@@ -21,7 +21,7 @@ namespace TimeSheetApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsername.Text))
-                MessageBox.Show(@"Please enter a search parameter.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter a search parameter.", @"Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 BindGrid();
         }
@@ -29,6 +29,19 @@ namespace TimeSheetApp
         private void BindGrid()
         {
             GridViewUsers.DataSource = SqlHelper.GetUsers(txtUsername.Text);
+            groupBoxUsers.Visible = true;
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dashboardForm = new DashboardForm();
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsersForm_FormClosing(sender, null);
         }
 
         private void UsersForm_FormClosing(object sender, FormClosingEventArgs e)
