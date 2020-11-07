@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeSheetApp.Data;
 
@@ -13,8 +6,13 @@ namespace TimeSheetApp
 {
     public partial class UsersForm : Form
     {
-        public UsersForm()
+        private readonly ISqlHelper _sqlHelper;
+        private readonly IDateManager _dateManager;
+
+        public UsersForm(ISqlHelper sqlHelper, IDateManager dateManager)
         {
+            _sqlHelper = sqlHelper ?? throw new ArgumentNullException(nameof(sqlHelper));
+            _dateManager = dateManager;
             InitializeComponent();
         }
 
@@ -28,13 +26,13 @@ namespace TimeSheetApp
 
         private void BindGrid()
         {
-            GridViewUsers.DataSource = SqlHelper.GetUsers(txtUsername.Text);
+            GridViewUsers.DataSource = _sqlHelper.GetUsers(txtUsername.Text);
             groupBoxUsers.Visible = true;
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dashboardForm = new DashboardForm();
+            var dashboardForm = new DashboardForm(_sqlHelper, _dateManager);
             dashboardForm.Show();
             this.Hide();
         }

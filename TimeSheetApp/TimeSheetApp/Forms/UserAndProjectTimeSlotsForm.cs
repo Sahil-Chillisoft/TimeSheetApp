@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeSheetApp.Data;
 
@@ -13,21 +6,26 @@ namespace TimeSheetApp
 {
     public partial class UserAndProjectTimeSlotsForm : Form
     {
-        public UserAndProjectTimeSlotsForm()
+        private readonly ISqlHelper _sqlHelper;
+        private readonly IDateManager _dateManager;
+
+        public UserAndProjectTimeSlotsForm(ISqlHelper sqlHelper, IDateManager dateManager)
         {
+            _sqlHelper = sqlHelper ?? throw new ArgumentNullException(nameof(sqlHelper));
+            _dateManager = dateManager ?? throw new ArgumentNullException(nameof(dateManager));
             InitializeComponent();
         }
 
         private void UserAndProjectTimeSlotsForm_Load(object sender, EventArgs e)
         {
             SetCustomDateTimePickerFormat();
-            monthComboBox.DataSource = DateManager.LoadMonthData();
+            monthComboBox.DataSource = _dateManager.GetMonthData();
         }
 
         private void SetCustomDateTimePickerFormat()
         {
-            yearPicker.Format = DateManager.DateFormatType;
-            yearPicker.CustomFormat = DateManager.DateFormat;
+            yearPicker.Format = _dateManager.DateFormatType();
+            yearPicker.CustomFormat = _dateManager.DateFormat();
             yearPicker.ShowUpDown = true;
         }
 
@@ -38,15 +36,15 @@ namespace TimeSheetApp
 
         private void BindGrids()
         {
-            GridViewUsers.DataSource = SqlHelper.GetUsersTimeByMonthAndYear(monthComboBox.Text, yearPicker.Text);
-            GridViewProjects.DataSource = SqlHelper.GetProjectTimeByMonthAndYear(monthComboBox.Text, yearPicker.Text);
+            GridViewUsers.DataSource = _sqlHelper.GetUsersTimeByMonthAndYear(monthComboBox.Text, yearPicker.Text);
+            GridViewProjects.DataSource = _sqlHelper.GetProjectTimeByMonthAndYear(monthComboBox.Text, yearPicker.Text);
             groupBoxUsersTimeSheet.Visible = true;
             groupBoxProjectTimeSheet.Visible = true;
         }
 
         private void dashboardToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            var dashboardForm = new DashboardForm();
+            var dashboardForm = new DashboardForm(_sqlHelper, _dateManager);
             dashboardForm.Show();
             this.Hide();
         }
