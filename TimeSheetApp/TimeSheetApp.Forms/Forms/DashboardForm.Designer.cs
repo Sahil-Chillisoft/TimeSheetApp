@@ -1,4 +1,4 @@
-﻿namespace TimeSheetApp
+﻿namespace TimeSheetApp.Forms
 {
     partial class DashboardForm
     {

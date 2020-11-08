@@ -1,39 +1,33 @@
 ﻿using System;
 using System.Windows.Forms;
-using TimeSheetApp.Data;
+using TimeSheetApp.Helpers.Data;
 
-namespace TimeSheetApp
+namespace TimeSheetApp.Forms
 {
-    public partial class UserTimeSlotsForm : Form
+    public partial class UsersForm : Form
     {
         private readonly ISqlHelper _sqlHelper;
         private readonly IDateManager _dateManager;
 
-        public UserTimeSlotsForm(ISqlHelper sqlHelper, IDateManager dateManager)
+        public UsersForm(ISqlHelper sqlHelper, IDateManager dateManager)
         {
             _sqlHelper = sqlHelper ?? throw new ArgumentNullException(nameof(sqlHelper));
-            _dateManager = dateManager ?? throw new ArgumentNullException(nameof(dateManager));
+            _dateManager = dateManager;
             InitializeComponent();
-        }
-
-        private void UserTimeSlotsForm_Load(object sender, EventArgs e)
-        {
-            monthComboBox.DataSource = _dateManager.GetMonthData();
-            groupBoxUserTimeSlots.Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsername.Text))
-                MessageBox.Show(@"Please enter a username.", @"Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter a search parameter.", @"Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 BindGrid();
         }
 
         private void BindGrid()
         {
-            GridViewUserTimeSlots.DataSource = _sqlHelper.GetTimeSlotsByUsernameAndMonth(txtUsername.Text, monthComboBox.Text);
-            groupBoxUserTimeSlots.Visible = true;
+            GridViewUsers.DataSource = _sqlHelper.GetUsers(txtUsername.Text);
+            groupBoxUsers.Visible = true;
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,10 +39,10 @@ namespace TimeSheetApp
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserTimeSlotsForm_FormClosing(sender, null);
+            UsersForm_FormClosing(sender, null);
         }
 
-        private void UserTimeSlotsForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void UsersForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
         }

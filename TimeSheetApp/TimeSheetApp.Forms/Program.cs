@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TimeSheetApp.Data;
+using TimeSheetApp.Forms;
+using TimeSheetApp.Helpers.Data;
 
 namespace TimeSheetApp
 {

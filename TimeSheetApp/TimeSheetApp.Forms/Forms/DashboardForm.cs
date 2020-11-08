@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using TimeSheetApp.Data;
+using TimeSheetApp.Helpers.Data;
 
-namespace TimeSheetApp
+namespace TimeSheetApp.Forms
 {
     public partial class DashboardForm : Form
     {

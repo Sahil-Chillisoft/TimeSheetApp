@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace TimeSheetApp.Data
+namespace TimeSheetApp.Helpers.Data
 {
     public interface IDateManager
     {

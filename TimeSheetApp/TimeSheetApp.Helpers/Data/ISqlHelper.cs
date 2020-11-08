@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using TimeSheetApp.Models;
+using TimeSheetApp.Helpers.Models;
 
-namespace TimeSheetApp.Data
+namespace TimeSheetApp.Helpers.Data
 {
     public interface ISqlHelper
     {

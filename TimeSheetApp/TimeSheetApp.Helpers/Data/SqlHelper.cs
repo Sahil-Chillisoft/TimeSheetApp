@@ -1,11 +1,11 @@
-﻿using System.Configuration;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
-using TimeSheetApp.Models;
+using TimeSheetApp.Helpers.Models;
 
-namespace TimeSheetApp.Data
+namespace TimeSheetApp.Helpers.Data
 {
     public class SqlHelper : ISqlHelper
     {
@@ -37,7 +37,6 @@ namespace TimeSheetApp.Data
             return userTimeSlotList;
             #endregion
         }
-
 
         public List<ProjectTimeSlot> GetProjectTimeByMonthAndYear(string month, string year)
         {

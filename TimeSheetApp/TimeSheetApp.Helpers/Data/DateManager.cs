@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace TimeSheetApp.Data
+namespace TimeSheetApp.Helpers.Data
 {
     public class DateManager : IDateManager
     {
