@@ -55,9 +55,9 @@
             this.groupBoxSearch.Controls.Add(this.btnSearch);
             this.groupBoxSearch.Controls.Add(this.monthComboBox);
             this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSearch.Location = new System.Drawing.Point(231, 44);
+            this.groupBoxSearch.Location = new System.Drawing.Point(134, 44);
             this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(385, 125);
+            this.groupBoxSearch.Size = new System.Drawing.Size(534, 83);
             this.groupBoxSearch.TabIndex = 4;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Search Panel";
@@ -91,9 +91,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(7, 88);
+            this.btnSearch.Location = new System.Drawing.Point(411, 40);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(143, 29);
+            this.btnSearch.Size = new System.Drawing.Size(117, 29);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -123,9 +123,9 @@
             // 
             this.groupBoxUserTimeSlots.Controls.Add(this.GridViewUserTimeSlots);
             this.groupBoxUserTimeSlots.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxUserTimeSlots.Location = new System.Drawing.Point(13, 186);
+            this.groupBoxUserTimeSlots.Location = new System.Drawing.Point(13, 147);
             this.groupBoxUserTimeSlots.Name = "groupBoxUserTimeSlots";
-            this.groupBoxUserTimeSlots.Size = new System.Drawing.Size(775, 252);
+            this.groupBoxUserTimeSlots.Size = new System.Drawing.Size(775, 291);
             this.groupBoxUserTimeSlots.TabIndex = 5;
             this.groupBoxUserTimeSlots.TabStop = false;
             this.groupBoxUserTimeSlots.Text = "User Time Slots";
@@ -135,7 +135,7 @@
             this.GridViewUserTimeSlots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewUserTimeSlots.Location = new System.Drawing.Point(7, 20);
             this.GridViewUserTimeSlots.Name = "GridViewUserTimeSlots";
-            this.GridViewUserTimeSlots.Size = new System.Drawing.Size(762, 226);
+            this.GridViewUserTimeSlots.Size = new System.Drawing.Size(762, 265);
             this.GridViewUserTimeSlots.TabIndex = 0;
             // 
             // menuStrip1

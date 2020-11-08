@@ -71,7 +71,7 @@
             this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxSearch.Location = new System.Drawing.Point(217, 44);
             this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(385, 125);
+            this.groupBoxSearch.Size = new System.Drawing.Size(458, 93);
             this.groupBoxSearch.TabIndex = 2;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Search Panel";
@@ -97,9 +97,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(7, 88);
+            this.btnSearch.Location = new System.Drawing.Point(308, 47);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(143, 29);
+            this.btnSearch.Size = new System.Drawing.Size(134, 29);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -132,16 +132,16 @@
             this.GridViewUsers.Location = new System.Drawing.Point(6, 17);
             this.GridViewUsers.Name = "GridViewUsers";
             this.GridViewUsers.ReadOnly = true;
-            this.GridViewUsers.Size = new System.Drawing.Size(387, 266);
+            this.GridViewUsers.Size = new System.Drawing.Size(387, 294);
             this.GridViewUsers.TabIndex = 3;
             // 
             // groupBoxUsersTimeSheet
             // 
             this.groupBoxUsersTimeSheet.Controls.Add(this.GridViewUsers);
             this.groupBoxUsersTimeSheet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxUsersTimeSheet.Location = new System.Drawing.Point(12, 189);
+            this.groupBoxUsersTimeSheet.Location = new System.Drawing.Point(12, 161);
             this.groupBoxUsersTimeSheet.Name = "groupBoxUsersTimeSheet";
-            this.groupBoxUsersTimeSheet.Size = new System.Drawing.Size(399, 292);
+            this.groupBoxUsersTimeSheet.Size = new System.Drawing.Size(399, 320);
             this.groupBoxUsersTimeSheet.TabIndex = 4;
             this.groupBoxUsersTimeSheet.TabStop = false;
             this.groupBoxUsersTimeSheet.Text = "Total Hours Per User for Specified Month and Year";
@@ -151,9 +151,9 @@
             // 
             this.groupBoxProjectTimeSheet.Controls.Add(this.GridViewProjects);
             this.groupBoxProjectTimeSheet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxProjectTimeSheet.Location = new System.Drawing.Point(459, 189);
+            this.groupBoxProjectTimeSheet.Location = new System.Drawing.Point(459, 161);
             this.groupBoxProjectTimeSheet.Name = "groupBoxProjectTimeSheet";
-            this.groupBoxProjectTimeSheet.Size = new System.Drawing.Size(409, 292);
+            this.groupBoxProjectTimeSheet.Size = new System.Drawing.Size(409, 320);
             this.groupBoxProjectTimeSheet.TabIndex = 5;
             this.groupBoxProjectTimeSheet.TabStop = false;
             this.groupBoxProjectTimeSheet.Text = "Total Hours Per Project for Specified Month and Year";
@@ -168,7 +168,7 @@
             this.GridViewProjects.Location = new System.Drawing.Point(6, 17);
             this.GridViewProjects.Name = "GridViewProjects";
             this.GridViewProjects.ReadOnly = true;
-            this.GridViewProjects.Size = new System.Drawing.Size(397, 266);
+            this.GridViewProjects.Size = new System.Drawing.Size(397, 294);
             this.GridViewProjects.TabIndex = 3;
             // 
             // menuStrip1
@@ -193,14 +193,14 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click_1);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 

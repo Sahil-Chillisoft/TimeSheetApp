@@ -51,9 +51,9 @@
             this.groupBoxSearch.Controls.Add(this.txtUsername);
             this.groupBoxSearch.Controls.Add(this.btnSearch);
             this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSearch.Location = new System.Drawing.Point(216, 44);
+            this.groupBoxSearch.Location = new System.Drawing.Point(173, 53);
             this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(385, 116);
+            this.groupBoxSearch.Size = new System.Drawing.Size(466, 81);
             this.groupBoxSearch.TabIndex = 4;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Search Panel";
@@ -72,13 +72,13 @@
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(6, 45);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(219, 24);
+            this.txtUsername.Size = new System.Drawing.Size(285, 24);
             this.txtUsername.TabIndex = 4;
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(6, 75);
+            this.btnSearch.Location = new System.Drawing.Point(317, 43);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(143, 29);
             this.btnSearch.TabIndex = 3;
@@ -103,16 +103,16 @@
             this.GridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewUsers.Location = new System.Drawing.Point(6, 19);
             this.GridViewUsers.Name = "GridViewUsers";
-            this.GridViewUsers.Size = new System.Drawing.Size(512, 232);
+            this.GridViewUsers.Size = new System.Drawing.Size(512, 273);
             this.GridViewUsers.TabIndex = 5;
             // 
             // groupBoxUsers
             // 
             this.groupBoxUsers.Controls.Add(this.GridViewUsers);
             this.groupBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxUsers.Location = new System.Drawing.Point(146, 181);
+            this.groupBoxUsers.Location = new System.Drawing.Point(146, 140);
             this.groupBoxUsers.Name = "groupBoxUsers";
-            this.groupBoxUsers.Size = new System.Drawing.Size(524, 257);
+            this.groupBoxUsers.Size = new System.Drawing.Size(524, 298);
             this.groupBoxUsers.TabIndex = 6;
             this.groupBoxUsers.TabStop = false;
             this.groupBoxUsers.Text = "Users";
@@ -140,14 +140,14 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
