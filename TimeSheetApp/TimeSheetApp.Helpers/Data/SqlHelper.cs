@@ -119,7 +119,8 @@ namespace TimeSheetApp.Helpers.Data
                             where Username like @Username 
                         ) as FirstMatchingUser on ts.UserId = FirstMatchingUser.UserId 
                         inner join Projects p on ts.ProjectId = p.ProjectId 
-                        where DATENAME(MONTH, ts.Date) = @Month ";
+                        where DATENAME(MONTH, ts.Date) = @Month 
+                        order by ts.Date";
             #endregion
 
             #region Execution
