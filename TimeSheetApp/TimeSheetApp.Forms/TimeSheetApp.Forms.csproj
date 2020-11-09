@@ -78,6 +78,9 @@
     <Compile Include="Forms\UserTimeSlotsForm.Designer.cs">
       <DependentUpon>UserTimeSlotsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

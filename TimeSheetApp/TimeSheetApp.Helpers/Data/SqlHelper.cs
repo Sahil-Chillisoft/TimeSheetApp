@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,6 +11,23 @@ namespace TimeSheetApp.Helpers.Data
     public class SqlHelper : ISqlHelper
     {
         private static readonly string ConnectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
+
+        public bool TestDatabaseConnection()
+        {
+            #region Execution 
+            try
+            {
+                using var connection = new SqlConnection(ConnectionString);
+                connection.Open();
+                connection.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            #endregion
+        }
 
         public List<UserTimeSlot> GetUsersTimeByMonthAndYear(string month, string year)
         {
@@ -23,14 +41,14 @@ namespace TimeSheetApp.Helpers.Data
                         group by u.UserId, u.Username ";
             #endregion
 
-            #region SQLExecution
+            #region Execution
             using var connection = new SqlConnection(ConnectionString);
             var userTimeSlotList = connection.Query<UserTimeSlot>
             (
                 sql,
                 new
                 {
-                    Month = month, 
+                    Month = month,
                     Year = year
                 }
             ).ToList();
@@ -50,14 +68,14 @@ namespace TimeSheetApp.Helpers.Data
                         group by p.ProjectId, p.Name ";
             #endregion
 
-            #region SQLExecution
+            #region Execution
             using var connection = new SqlConnection(ConnectionString);
             var userTimeSlotList = connection.Query<ProjectTimeSlot>
             (
                 sql,
                 new
                 {
-                    Month = month, 
+                    Month = month,
                     Year = year
                 }
             ).ToList();
@@ -73,7 +91,7 @@ namespace TimeSheetApp.Helpers.Data
                         where Username like @Search";
             #endregion
 
-            #region SQLExecution
+            #region Execution
             using var connection = new SqlConnection(ConnectionString);
             var userList = connection.Query<User>
             (
@@ -104,7 +122,7 @@ namespace TimeSheetApp.Helpers.Data
                         where DATENAME(MONTH, ts.Date) = @Month ";
             #endregion
 
-            #region SQLExecution
+            #region Execution
             using var connection = new SqlConnection(ConnectionString);
             var userTimeSlotList = connection.Query<TimeSlotUserProject>
             (

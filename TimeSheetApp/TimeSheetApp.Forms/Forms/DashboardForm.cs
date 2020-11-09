@@ -37,6 +37,15 @@ namespace TimeSheetApp.Forms
             this.Hide();
         }
 
+        private void btnTestDatabaseConnection_Click(object sender, EventArgs e)
+        {
+            var isSuccessfulConnection = _sqlHelper.TestDatabaseConnection();
+            if(isSuccessfulConnection)
+                MessageBox.Show(@"Connection Successful", @"Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(@"Connection Failed", @"Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);

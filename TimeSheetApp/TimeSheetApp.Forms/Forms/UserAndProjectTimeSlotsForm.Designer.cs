@@ -57,9 +57,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(214, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(388, 18);
+            this.lblTitle.Size = new System.Drawing.Size(389, 18);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Search For Hours For Users and Projects By Date";
+            this.lblTitle.Text = "Load Total  Hours For Users and Projects By Date";
             // 
             // groupBoxSearch
             // 

@@ -32,6 +32,7 @@
             this.btnViewTotalHoursByPersonAndProject = new System.Windows.Forms.Button();
             this.btnSearchForUsers = new System.Windows.Forms.Button();
             this.btnViewTimeSlotsByUserAndMonth = new System.Windows.Forms.Button();
+            this.btnTestDatabaseConnection = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -49,7 +50,7 @@
             this.btnViewTotalHoursByPersonAndProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewTotalHoursByPersonAndProject.Location = new System.Drawing.Point(253, 93);
             this.btnViewTotalHoursByPersonAndProject.Name = "btnViewTotalHoursByPersonAndProject";
-            this.btnViewTotalHoursByPersonAndProject.Size = new System.Drawing.Size(326, 67);
+            this.btnViewTotalHoursByPersonAndProject.Size = new System.Drawing.Size(326, 61);
             this.btnViewTotalHoursByPersonAndProject.TabIndex = 0;
             this.btnViewTotalHoursByPersonAndProject.Text = "View Total Hours by Person and Project";
             this.btnViewTotalHoursByPersonAndProject.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@
             // btnSearchForUsers
             // 
             this.btnSearchForUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchForUsers.Location = new System.Drawing.Point(253, 222);
+            this.btnSearchForUsers.Location = new System.Drawing.Point(253, 183);
             this.btnSearchForUsers.Name = "btnSearchForUsers";
-            this.btnSearchForUsers.Size = new System.Drawing.Size(326, 67);
+            this.btnSearchForUsers.Size = new System.Drawing.Size(326, 59);
             this.btnSearchForUsers.TabIndex = 1;
             this.btnSearchForUsers.Text = "Search For Users";
             this.btnSearchForUsers.UseVisualStyleBackColor = true;
@@ -69,13 +70,24 @@
             // btnViewTimeSlotsByUserAndMonth
             // 
             this.btnViewTimeSlotsByUserAndMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewTimeSlotsByUserAndMonth.Location = new System.Drawing.Point(253, 358);
+            this.btnViewTimeSlotsByUserAndMonth.Location = new System.Drawing.Point(253, 275);
             this.btnViewTimeSlotsByUserAndMonth.Name = "btnViewTimeSlotsByUserAndMonth";
-            this.btnViewTimeSlotsByUserAndMonth.Size = new System.Drawing.Size(326, 67);
+            this.btnViewTimeSlotsByUserAndMonth.Size = new System.Drawing.Size(326, 60);
             this.btnViewTimeSlotsByUserAndMonth.TabIndex = 2;
             this.btnViewTimeSlotsByUserAndMonth.Text = "View Timeslots by User and Month";
             this.btnViewTimeSlotsByUserAndMonth.UseVisualStyleBackColor = true;
             this.btnViewTimeSlotsByUserAndMonth.Click += new System.EventHandler(this.btnViewTimeSlotsByUserAndMonth_Click);
+            // 
+            // btnTestDatabaseConnection
+            // 
+            this.btnTestDatabaseConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestDatabaseConnection.Location = new System.Drawing.Point(253, 362);
+            this.btnTestDatabaseConnection.Name = "btnTestDatabaseConnection";
+            this.btnTestDatabaseConnection.Size = new System.Drawing.Size(326, 60);
+            this.btnTestDatabaseConnection.TabIndex = 3;
+            this.btnTestDatabaseConnection.Text = "Test Database Connection";
+            this.btnTestDatabaseConnection.UseVisualStyleBackColor = true;
+            this.btnTestDatabaseConnection.Click += new System.EventHandler(this.btnTestDatabaseConnection_Click);
             // 
             // DashboardForm
             // 
@@ -83,6 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTestDatabaseConnection);
             this.Controls.Add(this.btnViewTimeSlotsByUserAndMonth);
             this.Controls.Add(this.btnViewTotalHoursByPersonAndProject);
             this.Controls.Add(this.btnSearchForUsers);
@@ -102,6 +115,7 @@
         private System.Windows.Forms.Button btnViewTotalHoursByPersonAndProject;
         private System.Windows.Forms.Button btnSearchForUsers;
         private System.Windows.Forms.Button btnViewTimeSlotsByUserAndMonth;
+        private System.Windows.Forms.Button btnTestDatabaseConnection;
     }
 }
 
